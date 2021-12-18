@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       
+             xmlns:local="clr-namespace:TareaMVVM.Views"
+               
+             x:Class="TareaMVVM.Views.ViewListadoEmpleado">
+
+
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Button Text="Go To Details"
+                    Command="{Binding GoToDetailsCommand}"
+                    CommandParameter="{x:Type local:DeleteOrUpdate}"/>
+
+            <ListView ItemsSource="{Binding EmpleadosC}"
+                      SelectedItem="{Binding SelectedProduct}" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ViewCell >
+
+                            <Grid Padding="10" >
+
+                                <Frame CornerRadius="10" HasShadow="True">
+
+                                    <StackLayout  >
+
+                                        <Label FontSize="15" FontAttributes="Bold" VerticalOptions="Center"  >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="ID: "/>
+                                                    <Span  Text="{Binding id}"  TextColor="Black"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+ 
+                                            <Label FontSize="15" FontAttributes="Bold" VerticalOptions="Center"  >
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Nombre: "/>
+                                                        <Span  Text="{Binding nombre}"  TextColor="Black"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+
+                                        <Label FontSize="15" FontAttributes="Bold" VerticalOptions="Center"  >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Apellido: "/>
+                                                    <Span  Text="{Binding apellido}"  TextColor="Black"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Label FontSize="15" FontAttributes="Bold" VerticalOptions="Center"  >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Edad: "/>
+                                                    <Span  Text="{Binding edad}"  TextColor="Black"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Label FontSize="15" FontAttributes="Bold" VerticalOptions="Center"  >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Direccion: "/>
+                                                    <Span  Text="{Binding direccion}"  TextColor="Black"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Label FontSize="15" FontAttributes="Bold" VerticalOptions="Center"  >
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Puesto: "/>
+                                                    <Span  Text="{Binding puesto}"  TextColor="Black"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+
+                                    </StackLayout>
+
+                                        
+ 
+
+                                </Frame>
+
+
+
+                            </Grid>
+
+
+
+                        </ViewCell>
+
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

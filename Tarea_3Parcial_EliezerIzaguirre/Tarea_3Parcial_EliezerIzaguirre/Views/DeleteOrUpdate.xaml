@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:vm="clr-namespace:TareaMVVM.ViewModels"
+             x:Class="TareaMVVM.Views.DeleteOrUpdate">
+
+    <ContentPage.BindingContext>
+        <vm:EmpleadosViewModels />
+    </ContentPage.BindingContext>
+
+  
+
+    <ContentPage.Content>
+          <ScrollView>
+            <StackLayout>
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Text="Nombre" Grid.Row="0" Grid.Column="0" />
+                    <Entry Placeholder="" Grid.Row="0" Grid.Column="1" Text="{Binding Nombre}"/>
+
+                    <Label Text="Apellido" Grid.Row="1" Grid.Column="0" />
+                    <Entry Placeholder="" Grid.Row="1" Grid.Column="1" Text="{Binding Apellido}"/>
+
+                    <Label Text="Edad" Grid.Row="2" Grid.Column="0" />
+                    <Entry Placeholder="" Grid.Row="2" Grid.Column="1" Text="{Binding Edad}"/>
+
+                    <Label Text="Direccion" Grid.Row="3" Grid.Column="0" />
+                    <Entry Placeholder="" Grid.Row="3" Grid.Column="1" Text="{Binding Direccion}"/>
+
+                    <Label Text="puesto" Grid.Row="4" Grid.Column="0" />
+                    <Entry Placeholder="" Grid.Row="4" Grid.Column="1" Text="{Binding Puesto}"/>
+
+                    <Label Text="ID" Grid.Row="5" Grid.Column="0" />
+                    <Entry Placeholder="" Grid.Row="5" Grid.Column="1" Text="{Binding ID}" IsReadOnly="True"/>
+
+                    <Label Text="" Grid.Row="6" Grid.Column="0"/>
+                    <Label Text="" />
+                    <Label Text="" />
+
+                    <Button Text="Modificar" Grid.Row="6" Grid.Column="0" Command="{Binding ModificarCommand}"/>
+                    <Button Text="Eliminar" Grid.Row="6" Grid.Column="1" Command="{Binding EliminarCommand}"/>
+
+                </Grid>
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
